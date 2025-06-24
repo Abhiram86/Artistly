@@ -5,6 +5,7 @@ export function makeSearchParams(filter: FilterType): string {
 
   // Convert selected categories into CSV
   const selectedCategories = Object.entries(filter.category)
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     .filter(([_, value]) => value)
     .map(([key]) => key);
 

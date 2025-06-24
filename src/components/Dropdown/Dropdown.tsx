@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 
 interface DropdownProps {
   name: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   control: Control<any>;
   label: string;
   options: Readonly<string[]>;
@@ -29,7 +30,9 @@ export function Dropdown({ name, control, label, options }: DropdownProps) {
                       field.onChange([...(field.value || []), option]);
                     } else {
                       field.onChange(
-                        (field.value || []).filter((val) => val !== option)
+                        (field.value || []).filter(
+                          (val: string) => val !== option
+                        )
                       );
                     }
                   }}

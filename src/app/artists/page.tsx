@@ -15,6 +15,7 @@ export default async function Artists({
   const params = await searchParams;
   const urlString = new URLSearchParams(
     Object.entries(params)
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       .filter(([_, value]) => value !== undefined && value !== null)
       .map(([key, value]) => [key, String(value)])
   ).toString();
