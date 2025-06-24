@@ -8,20 +8,20 @@ export const filterArtists = (data: Artist[], filter: FilterType): Artist[] => {
       const keyAsCategory = key as keyof FilterType["category"];
       return filter.category[keyAsCategory];
     });
+
     if (
       selectedCategories.length > 0 &&
-      !selectedCategories.includes(artist.category)
+      !artist.category.some((cat) => selectedCategories.includes(cat))
     ) {
-      return false; // Artist's category is not among the selected ones
+      return false;
     }
 
     // 2. Location Filtering
     if (
       filter.location &&
-      artist.location.toLocaleLowerCase() !==
-        filter.location.toLocaleLowerCase()
+      artist.location.toLowerCase() !== filter.location.toLowerCase()
     ) {
-      return false; // Artist's location does not match the filter
+      return false;
     }
 
     // 3. Price Range Filtering
@@ -29,15 +29,16 @@ export const filterArtists = (data: Artist[], filter: FilterType): Artist[] => {
       filter.priceRange.min !== null &&
       artist.priceRange.max < filter.priceRange.min
     ) {
-      return false; // Artist's max price is below the filter's min
+      return false;
     }
+
     if (
       filter.priceRange.max !== null &&
       artist.priceRange.min > filter.priceRange.max
     ) {
-      return false; // Artist's min price is above the filter's max
+      return false;
     }
 
-    return true; // Artist passes all active filters
+    return true;
   });
 };

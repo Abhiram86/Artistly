@@ -11,13 +11,14 @@ import {
 import { Artist } from "@/lib/artists";
 import PriceRange from "../PriceRange";
 import ArtistTableView from "./ArtistTableView";
+import Categories from "../Categories";
 
 export default function ArtistTable({ data }: { data: Artist[] }) {
   return (
     <Table>
       <TableCaption>{data.length} artist submissions</TableCaption>
       <TableHeader>
-        <TableRow>
+        <TableRow className="hover:bg-neutral-900">
           <TableHead className="text-neutral-50">Name</TableHead>
           <TableHead className="text-neutral-50">Category</TableHead>
           <TableHead className="text-neutral-50">Location</TableHead>
@@ -29,7 +30,9 @@ export default function ArtistTable({ data }: { data: Artist[] }) {
         {data.map((artist) => (
           <TableRow key={artist.id} className="hover:bg-neutral-800">
             <TableCell>{artist.name}</TableCell>
-            <TableCell>{artist.category}</TableCell>
+            <TableCell>
+              <Categories categories={artist.category} />
+            </TableCell>
             <TableCell>{artist.location}</TableCell>
             <TableCell className="font-medium">
               <PriceRange

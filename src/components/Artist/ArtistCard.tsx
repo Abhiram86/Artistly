@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Banknote, ExternalLink, MapPin, Settings2 } from "lucide-react";
 import { Button } from "../ui/button";
 import PriceRange from "../PriceRange";
+import Categories from "../Categories";
 
 export default function ArtistCard({ data }: { data: Artist }) {
   return (
@@ -24,7 +25,7 @@ export default function ArtistCard({ data }: { data: Artist }) {
         <CardContent className="px-2 flex flex-col">
           <div className="flex gap-2 items-center">
             <Settings2 className="w-4 h-4" />
-            <p>{data.category}</p>
+            <Categories categories={data.category} />
           </div>
           <div className="flex gap-2 items-center">
             <MapPin className="w-4 h-4" />

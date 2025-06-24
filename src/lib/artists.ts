@@ -1,7 +1,7 @@
 export interface Artist {
   id: number;
   name: string;
-  category: string;
+  category: string[];
   location: string;
   priceRange: { min: number; max: number };
   image: string | null;
@@ -11,7 +11,7 @@ export const artists: Artist[] = [
   {
     id: 1,
     name: "Rohan",
-    category: "DJ",
+    category: ["DJ"],
     location: "Mumbai",
     priceRange: { min: 10000, max: 20000 },
     image: null,
@@ -19,7 +19,7 @@ export const artists: Artist[] = [
   {
     id: 2,
     name: "Anjali",
-    category: "Singer",
+    category: ["Singer"],
     location: "Delhi",
     priceRange: { min: 5000, max: 8000 },
     image: null,
@@ -27,7 +27,7 @@ export const artists: Artist[] = [
   {
     id: 3,
     name: "Meera",
-    category: "Dancer",
+    category: ["Dancer"],
     location: "Bangalore",
     priceRange: { min: 8000, max: 15000 },
     image: null,
@@ -35,7 +35,7 @@ export const artists: Artist[] = [
   {
     id: 4,
     name: "Yash",
-    category: "Speaker",
+    category: ["Speaker"],
     location: "Pune",
     priceRange: { min: 12000, max: 25000 },
     image: null,
@@ -43,7 +43,7 @@ export const artists: Artist[] = [
   {
     id: 5,
     name: "Tanya",
-    category: "Dancer",
+    category: ["Dancer", "Singer"],
     location: "Chennai",
     priceRange: { min: 6000, max: 10000 },
     image: null,
@@ -51,7 +51,7 @@ export const artists: Artist[] = [
   {
     id: 6,
     name: "Karan",
-    category: "DJ",
+    category: ["DJ"],
     location: "Hyderabad",
     priceRange: { min: 15000, max: 30000 },
     image: null,
@@ -59,7 +59,7 @@ export const artists: Artist[] = [
   {
     id: 7,
     name: "Sneha",
-    category: "Singer",
+    category: ["Singer", "Dancer"],
     location: "Kolkata",
     priceRange: { min: 7000, max: 12000 },
     image: null,
@@ -67,7 +67,7 @@ export const artists: Artist[] = [
   {
     id: 8,
     name: "Vikram",
-    category: "Dancer",
+    category: ["Dancer"],
     location: "Ahmedabad",
     priceRange: { min: 9000, max: 18000 },
     image: null,
@@ -75,7 +75,7 @@ export const artists: Artist[] = [
   {
     id: 9,
     name: "Pooja",
-    category: "Speaker",
+    category: ["Speaker"],
     location: "Mumbai",
     priceRange: { min: 5000, max: 9000 },
     image: null,
@@ -83,7 +83,7 @@ export const artists: Artist[] = [
   {
     id: 10,
     name: "Arjun",
-    category: "DJ",
+    category: ["DJ", "Speaker"],
     location: "Delhi",
     priceRange: { min: 20000, max: 35000 },
     image: null,
@@ -91,7 +91,7 @@ export const artists: Artist[] = [
   {
     id: 11,
     name: "Nisha",
-    category: "Singer",
+    category: ["Singer"],
     location: "Pune",
     priceRange: { min: 10000, max: 18000 },
     image: null,
@@ -99,7 +99,7 @@ export const artists: Artist[] = [
   {
     id: 12,
     name: "Rajat",
-    category: "DJ",
+    category: ["DJ"],
     location: "Chandigarh",
     priceRange: { min: 12000, max: 22000 },
     image: null,
@@ -107,7 +107,7 @@ export const artists: Artist[] = [
   {
     id: 13,
     name: "Divya",
-    category: "Dancer",
+    category: ["Dancer"],
     location: "Lucknow",
     priceRange: { min: 6000, max: 11000 },
     image: null,
@@ -115,7 +115,7 @@ export const artists: Artist[] = [
   {
     id: 14,
     name: "Imran",
-    category: "Speaker",
+    category: ["Speaker"],
     location: "Nagpur",
     priceRange: { min: 14000, max: 20000 },
     image: null,
@@ -123,7 +123,7 @@ export const artists: Artist[] = [
   {
     id: 15,
     name: "Farah",
-    category: "Singer",
+    category: ["Singer"],
     location: "Jaipur",
     priceRange: { min: 9000, max: 14000 },
     image: null,
@@ -131,7 +131,7 @@ export const artists: Artist[] = [
   {
     id: 16,
     name: "Amit",
-    category: "DJ",
+    category: ["DJ", "Singer"],
     location: "Surat",
     priceRange: { min: 8000, max: 17000 },
     image: null,
@@ -139,7 +139,7 @@ export const artists: Artist[] = [
   {
     id: 17,
     name: "Simran",
-    category: "Dancer",
+    category: ["Dancer"],
     location: "Bhopal",
     priceRange: { min: 10000, max: 16000 },
     image: null,
@@ -147,7 +147,7 @@ export const artists: Artist[] = [
   {
     id: 18,
     name: "Neeraj",
-    category: "Speaker",
+    category: ["Speaker"],
     location: "Indore",
     priceRange: { min: 6000, max: 13000 },
     image: null,
@@ -155,7 +155,7 @@ export const artists: Artist[] = [
   {
     id: 19,
     name: "Priya",
-    category: "Singer",
+    category: ["Singer", "Dancer"],
     location: "Thane",
     priceRange: { min: 11000, max: 19000 },
     image: null,
@@ -163,7 +163,7 @@ export const artists: Artist[] = [
   {
     id: 20,
     name: "Rahul",
-    category: "DJ",
+    category: ["DJ"],
     location: "Vijayawada",
     priceRange: { min: 7000, max: 15000 },
     image: null,
@@ -171,7 +171,7 @@ export const artists: Artist[] = [
   {
     id: 21,
     name: "Ayesha",
-    category: "Dancer",
+    category: ["Dancer"],
     location: "Amritsar",
     priceRange: { min: 5000, max: 9000 },
     image: null,
@@ -179,7 +179,7 @@ export const artists: Artist[] = [
   {
     id: 22,
     name: "Manoj",
-    category: "Speaker",
+    category: ["Speaker"],
     location: "Patna",
     priceRange: { min: 8000, max: 12000 },
     image: null,
@@ -187,7 +187,7 @@ export const artists: Artist[] = [
   {
     id: 23,
     name: "Isha",
-    category: "Singer",
+    category: ["Singer"],
     location: "Nashik",
     priceRange: { min: 13000, max: 20000 },
     image: null,
@@ -195,7 +195,7 @@ export const artists: Artist[] = [
   {
     id: 24,
     name: "Dev",
-    category: "DJ",
+    category: ["DJ"],
     location: "Guwahati",
     priceRange: { min: 6000, max: 14000 },
     image: null,
@@ -203,7 +203,7 @@ export const artists: Artist[] = [
   {
     id: 25,
     name: "Riya",
-    category: "Dancer",
+    category: ["Dancer"],
     location: "Kochi",
     priceRange: { min: 9000, max: 17000 },
     image: null,
@@ -211,7 +211,7 @@ export const artists: Artist[] = [
   {
     id: 26,
     name: "Sagar",
-    category: "Speaker",
+    category: ["Speaker", "DJ"],
     location: "Vadodara",
     priceRange: { min: 7000, max: 10000 },
     image: null,
@@ -219,7 +219,7 @@ export const artists: Artist[] = [
   {
     id: 27,
     name: "Neha",
-    category: "Singer",
+    category: ["Singer"],
     location: "Jodhpur",
     priceRange: { min: 8000, max: 13000 },
     image: null,
@@ -227,7 +227,7 @@ export const artists: Artist[] = [
   {
     id: 28,
     name: "Tarun",
-    category: "DJ",
+    category: ["DJ"],
     location: "Raipur",
     priceRange: { min: 10000, max: 19000 },
     image: null,
@@ -235,7 +235,7 @@ export const artists: Artist[] = [
   {
     id: 29,
     name: "Sana",
-    category: "Dancer",
+    category: ["Dancer", "Singer"],
     location: "Ranchi",
     priceRange: { min: 6000, max: 11000 },
     image: null,
@@ -243,7 +243,7 @@ export const artists: Artist[] = [
   {
     id: 30,
     name: "Nitin",
-    category: "Speaker",
+    category: ["Speaker"],
     location: "Dehradun",
     priceRange: { min: 9000, max: 16000 },
     image: null,
