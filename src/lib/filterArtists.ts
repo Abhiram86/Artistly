@@ -4,9 +4,10 @@ import { FilterType } from "@/context/FilterContext";
 export const filterArtists = (data: Artist[], filter: FilterType): Artist[] => {
   return data.filter((artist) => {
     // 1. Category Filtering
-    const selectedCategories = Object.keys(filter.category).filter(
-      (key) => filter.category[key]
-    );
+    const selectedCategories = Object.keys(filter.category).filter((key) => {
+      const keyAsCategory = key as keyof FilterType["category"];
+      return filter.category[keyAsCategory];
+    });
     if (
       selectedCategories.length > 0 &&
       !selectedCategories.includes(artist.category)
